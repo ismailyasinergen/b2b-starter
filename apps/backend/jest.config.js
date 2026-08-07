@@ -1,6 +1,9 @@
 const { loadEnv } = require("@medusajs/framework/utils");
 loadEnv("test", process.cwd());
 
+process.env.JWT_SECRET ||= "supersecret";
+process.env.COOKIE_SECRET ||= "supersecret";
+
 module.exports = {
   transform: {
     "^.+\\.[jt]s$": [

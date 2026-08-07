@@ -19,9 +19,7 @@ jest.setTimeout(60 * 1000);
 
 medusaIntegrationTestRunner({
   inApp: true,
-  env: {
-    JWT_SECRET: "supersecret",
-  },
+  env: {},
   testSuite: ({ api, getContainer }) => {
     let storeHeaders, cart, product, salesChannel, region, customerToken;
 
@@ -32,9 +30,7 @@ medusaIntegrationTestRunner({
       storeHeaders = generateStoreHeaders({ publishableKey });
       const res = await createStoreUser({ api, storeHeaders });
       customerToken = res.token;
-      console.log("vic logs customerToken", customerToken);
       storeHeaders.headers["Authorization"] = `Bearer ${customerToken}`;
-      console.log("vic logs storeHeaders", storeHeaders);
       region = await regionSeeder({ api, adminHeaders, data: {} });
 
       salesChannel = await salesChannelSeeder({
@@ -231,7 +227,6 @@ medusaIntegrationTestRunner({
     });
 
     describe("DELETE /store/companies/:id", () => {
-      console.log("vic logs storeHeaders", storeHeaders);
       let company1;
 
       beforeEach(async () => {
