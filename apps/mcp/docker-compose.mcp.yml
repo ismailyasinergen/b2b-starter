@@ -1,0 +1,15 @@
+services:
+  medusa-b2b-mcp:
+    build: .
+    environment:
+      MEDUSA_BACKEND_URL: ${MEDUSA_BACKEND_URL:-http://host.docker.internal:9000}
+      MEDUSA_PUBLISHABLE_KEY: ${MEDUSA_PUBLISHABLE_KEY:-}
+      MEDUSA_STORE_TOKEN: ${MEDUSA_STORE_TOKEN:-}
+      MEDUSA_ADMIN_TOKEN: ${MEDUSA_ADMIN_TOKEN:-}
+      MCP_ALLOW_WRITES: ${MCP_ALLOW_WRITES:-false}
+      MCP_HOST: 0.0.0.0
+      MCP_PORT: 3333
+    ports:
+      - "3333:3333"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"

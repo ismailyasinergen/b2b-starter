@@ -1,0 +1,16 @@
+{
+  "name": "medusa-b2b-mcp",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node src/server.mjs --stdio",
+    "start:http": "node src/server.mjs --http",
+    "smoke": "node scripts/smoke.mjs",
+    "check": "node --check src/server.mjs && node --check src/tools.mjs && node --check src/medusa-client.mjs",
+    "integration": "node scripts/integration.mjs"
+  }
+}

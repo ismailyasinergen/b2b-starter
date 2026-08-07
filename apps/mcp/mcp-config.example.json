@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "medusa-b2b": {
+      "command": "node",
+      "args": ["/ABSOLUTE/PATH/medusa-b2b-mcp/src/server.mjs", "--stdio"],
+      "env": {
+        "MEDUSA_BACKEND_URL": "http://localhost:9000",
+        "MEDUSA_PUBLISHABLE_KEY": "pk_...",
+        "MEDUSA_STORE_TOKEN": "...",
+        "MEDUSA_ADMIN_TOKEN": "...",
+        "MCP_ALLOW_WRITES": "true"
+      }
+    }
+  }
+}
