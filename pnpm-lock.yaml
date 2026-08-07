@@ -110,6 +110,8 @@ importers:
         specifier: ^5.2.11
         version: 5.4.21(@types/node@20.19.27)(terser@5.44.1)
 
+  apps/mcp: {}
+
   apps/storefront:
     dependencies:
       '@headlessui/react':
